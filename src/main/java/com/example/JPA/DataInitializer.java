@@ -1,6 +1,5 @@
 package com.example.JPA;
 
-
 import com.example.JPA.model.Product;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class DataInitializer {
 
 // classe responsavek por iniciar e intanciar values na base de dados
-    private final ProductRepository productRepository;
+    private final ProductRepository productRepository; // base de dados inserida em memoria  bd(h2), as informacoes serao inseridas e instanciadas em tempo de execucao
 
     @Autowired
     public DataInitializer(ProductRepository productRepository){
@@ -20,7 +19,7 @@ public class DataInitializer {
     @PostConstruct // deve ser executado apos a contrucao do bean
     public void InitializeData(){
         //instanciando dados para base de dados aqui,injetando dependencia (id)
-        Product product1 = new Product("Arroz", 200);
+        Product product1 = new Product("Lasanha", 200);
         Product product2 = new Product("Feijão", 200);
         Product product3 = new Product("Batata", 200);
 
